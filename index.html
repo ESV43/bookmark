@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#11110f" />
+  <meta name="description" content="Small worlds for the pages you love. Shop illustrated, two-sided art bookmarks." />
+  <title>Fable & Folio — bookmarks for curious minds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Fable and Folio home"><span class="brand-mark">f<span>·</span>f</span><span class="brand-name">FABLE <i>&</i> FOLIO</span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="#collection">The collection</a><a href="#story">Our little world</a></nav>
+    <button class="bag-button" id="bag-button" aria-label="Open your bag"><span>YOUR BAG</span><span class="bag-icon">↗</span><b id="bag-count">0</b></button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><span class="spark">✳</span> A LITTLE ART FOR YOUR NEXT CHAPTER</div>
+        <h1>Keep your place.<br><em>Lose yourself.</em></h1>
+        <p class="hero-sub">Tiny windows into other worlds, made to live between the pages you love.</p>
+        <a class="circle-link" href="#collection"><span>FIND YOUR<br>NEXT FAVOURITE</span><i>↓</i></a>
+      </div>
+      <div class="hero-art" aria-label="An illustrated bookmark floating among stars">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="hero-star star-a">✳</span><span class="hero-star star-b">✦</span><span class="hero-star star-c">✧</span>
+        <div class="hero-bookmark bookmark-hero"><div class="bookmark-hole"></div><div class="hero-moon">☾</div><div class="hero-plant">✳</div><div class="hero-label">SOMEWHERE<br>BETWEEN<br>THE LINES</div><div class="hero-sun"></div></div>
+        <div class="scribble-note">made for<br>daydreamers <span>↗</span></div>
+        <div class="hero-caption"><span>01 / 06</span><span>THE NIGHT GARDEN</span></div>
+      </div>
+      <div class="hero-bottom"><span>DESIGNED TO BE DISCOVERED</span><span>SCROLL TO WANDER ↓</span><span>EST. WITH LOVE, IN INDIA</span></div>
+    </section>
+
+    <section class="collection section-wrap" id="collection">
+      <div class="section-heading"><div><div class="eyebrow">THE BOOKMARK EDITION <span class="muted">— VOL. 01</span></div><h2>Choose your <em>chapter.</em></h2></div><p>Two sides, one small escape.<br>Hover to turn each little world.</p></div>
+      <div class="filter-row"><span id="item-total">00 PIECES</span><button class="filter active" data-filter="all">ALL WORLDS <span>00</span></button></div>
+      <div class="product-grid" id="product-grid"></div>
+      <div class="collection-note"><span>✳</span> Printed on lovely, sturdy 400 GSM art card <span class="note-line"></span><span>Approx. 5 × 15 cm</span></div>
+    </section>
+
+    <section class="interlude" id="story"><div class="interlude-mark">“</div><p>A good book takes you somewhere.<br><em>A good bookmark helps you come back.</em></p><span>THE FABLE & FOLIO PROMISE</span><div class="interlude-orb"></div></section>
+    <section class="closing section-wrap"><div class="closing-left"><div class="eyebrow">A SMALL THING, A LONG WAY</div><h2>For the ones who<br>always read <em>one more page.</em></h2></div><a class="closing-cta" href="#collection">SHOP THE COLLECTION <span>↗</span></a></section>
+  </main>
+  <footer><a class="brand" href="#top"><span class="brand-mark">f<span>·</span>f</span><span class="brand-name">FABLE <i>&</i> FOLIO</span></a><span>MADE FOR THE LOVE OF A GOOD STORY.</span><span>© 2026 FABLE & FOLIO</span></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag" aria-hidden="true"><div class="drawer-head"><div><span class="eyebrow">YOUR LITTLE STACK</span><h3>Your bag <i id="drawer-count">(0)</i></h3></div><button class="close-drawer" aria-label="Close bag">×</button></div><div id="cart-items" class="cart-items"></div><div class="cart-footer"><div class="subtotal"><span>SUBTOTAL</span><strong id="subtotal">₹0</strong></div><p>Shipping is calculated after you share your delivery details.</p><button class="checkout-button" id="checkout-button">MAKE IT YOURS <span>↗</span></button><small>UPI payment · simple & direct</small></div></aside>
+
+  <div class="modal-backdrop" id="checkout-modal"><div class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title"><button class="modal-close" aria-label="Close">×</button><div class="eyebrow">ONE LAST LITTLE THING</div><h2 id="checkout-title">Where should we<br>send your <em>story?</em></h2><form id="order-form"><label>Your name<input name="name" required autocomplete="name" placeholder="The name on your parcel" /></label><label>Email address<input name="email" type="email" required autocomplete="email" placeholder="you@example.com" /></label><label>Delivery address<textarea name="address" required rows="3" placeholder="House, street, city, PIN code"></textarea></label><div class="order-total"><span>ORDER TOTAL</span><strong id="checkout-total">₹0</strong></div><button class="checkout-button" type="submit">CONTINUE TO UPI <span>↗</span></button><p class="form-note">Your order is saved when you continue. Pay using any UPI app, then keep the UTR/reference number handy for confirmation.</p></form><div id="payment-step" class="payment-step" hidden></div></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
