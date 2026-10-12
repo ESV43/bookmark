@@ -12,12 +12,34 @@ function doGet(e) {
   const callback = (e && e.parameter && e.parameter.callback || '').replace(/[^\w.$]/g, '');
   try {
     const action = e && e.parameter && e.parameter.action || 'products';
+    if (action === 'image') {
+      const imageId = e.parameter.id || '';
+      const allowedIds = getCatalogImageIds_();
+      if (!imageId || allowedIds.indexOf(imageId) === -1) throw new Error('Image is not in the active product catalog');
+      const file = DriveApp.getFileById(imageId);
+      const blob = file.getBlob();
+      const mimeType = blob.getContentType() || '';
+      if (mimeType.indexOf('image/') !== 0) throw new Error('Drive file is not an image');
+      if (blob.getBytes().length > 8 * 1024 * 1024) throw new Error('Image is over 8 MB; please optimize it and try again');
+      return respond({ ok: true, mimeType: mimeType, base64: Utilities.base64Encode(blob.getBytes()) }, callback);
+    }
     if (action !== 'products') return respond({ ok: false, error: 'Unknown action' }, callback);
     const products = readProducts_();
     return respond({ ok: true, products: products }, callback);
   } catch (err) {
     return respond({ ok: false, error: String(err.message || err) }, callback);
   }
+}
+
+function getCatalogImageIds_() {
+  const ids = [];
+  readProducts_().forEach(function (product) {
+    [product.frontImage, product.backImage].forEach(function (url) {
+      const match = String(url || '').match(/(?:\/d\/|[?&]id=)([\w-]+)/);
+      if (match && ids.indexOf(match[1]) === -1) ids.push(match[1]);
+    });
+  });
+  return ids;
 }
 
 function doPost(e) {

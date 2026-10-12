@@ -39,8 +39,8 @@ Rows without an id, name, positive numeric price, or either image link are skipp
 
 1. In the spreadsheet, choose **Extensions → Apps Script** and replace the editor contents with `apps-script/Code.gs`.
 2. In `Code.gs`, replace `PASTE_GOOGLE_SHEET_ID_HERE` with the ID between `/d/` and `/edit` in the spreadsheet URL.
-3. Choose **Deploy → New deployment → Web app**. Set **Execute as** to your account and **Who has access** to **Anyone**, deploy, and authorize Sheets access.
-4. Copy the deployed URL ending in `/exec`. In `app.js`, set `CONFIG.appsScriptUrl` to that URL. Set `CONFIG.upiId` and `CONFIG.payeeName` to your payment details.
+3. Choose **Deploy → Manage deployments → Edit**, select **New version**, and deploy. Set **Execute as** to your account and **Who has access** to **Anyone**. Approve both Sheets and Drive access when Google asks. The Drive permission lets the script serve the catalog images to the store, even when Drive's normal share page will not display inside an image tag.
+4. Keep using your deployed URL ending in `/exec`. In `app.js`, `CONFIG.appsScriptUrl` should contain that URL. Set `CONFIG.upiId` and `CONFIG.payeeName` to your payment details.
 5. Host `index.html`, `styles.css`, and `app.js` on a static host. Apps Script serves active products and creates an `Orders` tab when the first order arrives.
 
 Keep the spreadsheet private. The public Apps Script endpoint returns active product fields. The `Orders` tab contains customer names, email addresses, and delivery addresses; limit sheet access to people handling orders.
@@ -49,4 +49,4 @@ Keep the spreadsheet private. The public Apps Script endpoint returns active pro
 
 Checkout sends the order to Sheets as `PENDING UPI`, then opens a `upi://pay` request with the total and order ID. There is no payment gateway or automatic verification. Check the payment in your UPI app or bank, match the buyer’s UTR/reference to the order, then update Payment Status before confirming fulfillment.
 
-Without an Apps Script URL, the catalog stays empty and orders are not submitted to Sheets.
+The Apps Script image endpoint only serves image files linked from active product rows, and rejects files over 8 MB. Without an Apps Script URL, the catalog stays empty and orders are not submitted to Sheets.
