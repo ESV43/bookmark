@@ -1,5 +1,5 @@
 /* Configure these before launch. Deploy apps-script/Code.gs as a web app and paste its URL below. */
-const CONFIG = { appsScriptUrl: 'https://script.google.com/macros/s/AKfycbxLbqHxm6t7uwBkr6RLTm3gaeosMmMCuI3a11navHVkxcQWB_tdw_yW-mlEugkw6h7_/exec', upiId: 'your-upi-id@bank', payeeName: 'Fable & Folio', currency: 'INR' };
+const CONFIG = { appsScriptUrl: 'https://script.google.com/macros/s/AKfycbyzayGO74xJMlnaEMPXdsXT-2mZhVt1DGc0lD0h060Ba2Puk41mI3OpZ9ihdlEVv3td/exec', upiId: 'your-upi-id@bank', payeeName: 'Fable & Folio', currency: 'INR' };
 let products = [];
 const money = n => new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(n);
 const driveFileId = url => {const m=String(url||'').match(/(?:\/d\/|[?&]id=)([\w-]+)/);return m?m[1]:''};
