@@ -166,3 +166,11 @@ footer{border-color:rgba(140,170,255,.14)}footer>span{color:#636b97}
 .checkout-modal{padding:30px 20px}
 .product-grid{row-gap:34px}
 }
+/* ===== BAG QUANTITY + REMOVE ===== */
+.qty-row{display:flex;align-items:center;gap:10px;margin-top:8px}
+.qty-row button{width:36px;height:36px;min-width:36px;border-radius:50%;border:1px solid rgba(140,170,255,.35);background:rgba(16,22,55,.6);color:#dfe7ff;font-size:18px;line-height:1;display:grid;place-items:center;transition:transform var(--dur-1) var(--ease-fluid),background var(--dur-1) var(--ease-fluid)}
+.qty-row button:hover{background:rgba(103,232,249,.18)}
+.qty-row button:active{transform:scale(.9)}
+.qty-row b{font:11px var(--mono);color:#dfe7ff;min-width:20px;text-align:center}
+.remove-link{margin-top:6px;background:none;border:0;padding:8px 0;text-align:left;color:#f0a6ff;font:9px var(--mono);letter-spacing:1.2px;text-decoration:underline;text-underline-offset:3px}
+.remove-link:hover{color:#fff}
