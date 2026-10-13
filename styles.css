@@ -12,3 +12,4 @@
 .product-visual{height:470px}.bookmark-3d{width:145px;height:435px}.product-card .add-button{width:145px;margin:0 auto;display:flex}
 @media(max-width:850px){.product-visual{height:410px}.bookmark-3d{width:125px;height:375px}.product-card .add-button{width:125px}}
 @media(max-width:600px){.product-visual{height:305px}.bookmark-3d{width:94px;height:282px}.product-card .add-button{width:94px}}
+.bookmark-face{background:#24221d;min-height:100%}.bookmark-face img{background:#24221d}.bookmark-face.image-error{display:grid;place-items:center;border:1px dashed #6b6257}.bookmark-face.image-error img{display:none}.bookmark-face.image-error:after{content:"IMAGE UNAVAILABLE — CHECK DRIVE SHARING";font:7px var(--mono);letter-spacing:1px;color:#a89e90;text-align:center;padding:12px}.mini-art{background:#24221d}.mini-art.image-error img{display:none}.mini-art.image-error:after{content:"!";color:var(--copper);display:grid;place-items:center;height:100%}

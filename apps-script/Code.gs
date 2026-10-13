@@ -35,7 +35,7 @@ function getCatalogImageIds_() {
   const ids = [];
   readProducts_().forEach(function (product) {
     [product.frontImage, product.backImage].forEach(function (url) {
-      const match = String(url || '').match(/(?:\/d\/|[?&]id=)([\w-]+)/);
+      const match = String(url || '').match(/(?:\/d\/|[?&]id=|lh3\.googleusercontent\.com\/d\/)([\w-]+)/);
       if (match && ids.indexOf(match[1]) === -1) ids.push(match[1]);
     });
   });
