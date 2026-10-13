@@ -1,5 +1,5 @@
 /* Configure these before launch. Deploy apps-script/Code.gs as a web app and paste its URL below. */
-const CONFIG = { appsScriptUrl: 'https://script.google.com/macros/s/AKfycbyzayGO74xJMlnaEMPXdsXT-2mZhVt1DGc0lD0h060Ba2Puk41mI3OpZ9ihdlEVv3td/exec', upiId: 'your-upi-id@bank', payeeName: 'Fable & Folio', currency: 'INR' };
+const CONFIG = { appsScriptUrl: 'https://script.google.com/macros/s/AKfycbyHUPzJfHrNADotOT0fvvJp2r1AnVyptzC6fupWol_1WRTG_WY_T0-QOR8ihOlQRTTr/exec', upiId: 'your-upi-id@bank', payeeName: 'Fable & Folio', currency: 'INR' };
 let products = [];
 const money = n => new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(n);
 const escapeAttr = value => String(value||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
