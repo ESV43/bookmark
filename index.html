@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#11110f" />
+  <meta name="theme-color" content="#04050d" />
   <meta name="description" content="Small worlds for the pages you love. Shop illustrated, two-sided art bookmarks." />
   <title>Fable & Folio — bookmarks for curious minds</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <canvas id="cosmos" aria-hidden="true"></canvas>
+  <div class="nebula nebula-a" aria-hidden="true"></div><div class="nebula nebula-b" aria-hidden="true"></div><div class="nebula nebula-c" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Fable and Folio home"><span class="brand-mark">f<span>·</span>f</span><span class="brand-name">FABLE <i>&</i> FOLIO</span></a>
@@ -24,7 +26,6 @@
       <div class="hero-copy"><div class="eyebrow"><span class="spark">✳</span> A LITTLE ART FOR YOUR NEXT CHAPTER</div>
         <h1>Keep your place.<br><em>Lose yourself.</em></h1>
         <p class="hero-sub">Tiny windows into other worlds, made to live between the pages you love.</p>
-        <a class="circle-link" href="#collection"><span>FIND YOUR<br>NEXT FAVOURITE</span><i>↓</i></a>
       </div>
       <div class="hero-art" aria-label="An illustrated bookmark floating among stars">
         <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="hero-star star-a">✳</span><span class="hero-star star-b">✦</span><span class="hero-star star-c">✧</span>
@@ -37,13 +38,14 @@
 
     <section class="collection section-wrap" id="collection">
       <div class="section-heading"><div><div class="eyebrow">THE BOOKMARK EDITION <span class="muted">— VOL. 01</span></div><h2>Choose your <em>chapter.</em></h2></div><p>Two sides, one small escape.<br>Hover to turn · click to inspect both sides.</p></div>
+      <div class="search-row"><span class="search-icon" aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search bookmarks…" aria-label="Search bookmarks" autocomplete="off" /><button id="search-clear" aria-label="Clear search" hidden>×</button></div>
       <div class="filter-row"><span id="item-total">00 PIECES</span><button class="filter active" data-filter="all">ALL WORLDS <span>00</span></button></div>
       <div class="product-grid" id="product-grid"></div>
       <div class="collection-note"><span>✳</span> Printed on lovely, sturdy 400 GSM art card <span class="note-line"></span><span>Approx. 5 × 15 cm</span></div>
     </section>
 
     <section class="interlude" id="story"><div class="interlude-mark">“</div><p>A good book takes you somewhere.<br><em>A good bookmark helps you come back.</em></p><span>THE FABLE & FOLIO PROMISE</span><div class="interlude-orb"></div></section>
-    <section class="closing section-wrap"><div class="closing-left"><div class="eyebrow">A SMALL THING, A LONG WAY</div><h2>For the ones who<br>always read <em>one more page.</em></h2></div><a class="closing-cta" href="#collection">SHOP THE COLLECTION <span>↗</span></a></section>
+    <section class="closing section-wrap"><div class="closing-left"><div class="eyebrow">A SMALL THING, A LONG WAY</div><h2>For the ones who<br>always read <em>one more page.</em></h2></div></section>
   </main>
   <footer><a class="brand" href="#top"><span class="brand-mark">f<span>·</span>f</span><span class="brand-name">FABLE <i>&</i> FOLIO</span></a><span>MADE FOR THE LOVE OF A GOOD STORY.</span><span>© 2026 FABLE & FOLIO</span></footer>
 
